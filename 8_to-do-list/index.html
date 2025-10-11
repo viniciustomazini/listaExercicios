@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Tarefas</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fontawesome.com/icons/atom?f=sharp&s=solid" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="Assets/css/style.css" rel="stylesheet">
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="container mx-auto p-6">
+       
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">
+                <i class="fa-sharp fa-solid fa-atom"></i>
+                Sistema de Gestão de Tarefas
+            </h1>
+            <p class="text-gray-600">Controle e monitoramento de atividades</p>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="flex space-x-1 mb-6 bg-white rounded-lg p-1 shadow-sm">
+            <button onclick="showTab('tasks')" id="tab-tasks" class="flex items-center space-x-2 px-4 py-2 rounded-md transition-all tab-active">
+                <i class="fas fa-tasks"></i>
+                <span>Tarefas</span>
+            </button>
+            <button onclick="showTab('gantt')" id="tab-gantt" class="flex items-center space-x-2 px-4 py-2 rounded-md transition-all tab-inactive">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Gantt</span>
+            </button>
+            <button onclick="showTab('reports')" id="tab-reports" class="flex items-center space-x-2 px-4 py-2 rounded-md transition-all tab-inactive">
+                <i class="fas fa-chart-bar"></i>
+                <span>Relatórios</span>
+            </button>
+        </div>
+
+        <!-- Filtros -->
+        <div class="card mb-6 p-6">
+            <h3 class="text-lg font-semibold mb-4 flex items-center">
+                <i class="fas fa-filter mr-2 text-blue-600"></i>
+                Filtros
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Elaborador</label>
+                    <select id="filter-Elaborador" class="form-select" onchange="applyFilters()">
+                        <option value="">Todos</option>
+                        <option value="Cintía">Cintía</option>
+                        <option value="Kamila">Kamila</option>
+                        <option value="Lara">Lara</option>
+                        <option value="Luca">Luca</option>
+                        <option value="Luísa">Luísa</option>
+                        <option value="Hanna">Hanna</option>
+                        <option value="Taína">Taína</option>
+                        <option value="Maryane">Maryane</option>
+                        <option value="Vinícius">Vinícius</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Suporte</label>
+                    <select id="filter-Suporte" class="form-select" onchange="applyFilters()">
+                        <option value="">Todos</option>
+                        <option value="Hanna">Hanna</option>
+                        <option value="Taína">Taína</option>
+                        <option value="Maryane">Maryane</option>
+                        <option value="Vinícius">Vinícius</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                    <select id="filter-status" class="form-select" onchange="applyFilters()">
+                        <option value="">Todos</option>
+                        <option value="0%">0%</option>
+                        <option value="25%">25%</option>
+                        <option value="50%">50%</option>
+                        <option value="75%">75%</option>
+                        <option value="100%">100%</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Mês</label>
+                    <input type="month" id="filter-mes" class="form-input" onchange="applyFilters()">
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Tabs -->
+
+        <!-- Tasks Tab -->
+        <div id="content-tasks" class="space-y-6">
+            <!-- Add New Task -->
+            <div class="card p-6">
+                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                    <i class="fas fa-plus mr-2 text-green-600"></i>
+                    Nova Tarefa
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div class="md:col-span-3">
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Tarefa/Projeto *</label>
+                        <input type="text" id="new-projeto" class="form-input" placeholder="Digite o nome da tarefa ou projeto">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Elaborador *</label>
+                        <select id="new-Elaborador" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="Cintía">Cintía</option>
+                            <option value="Kamila">Kamila</option>
+                            <option value="Lara">Lara</option>
+                            <option value="Luca">Luca</option>
+                            <option value="Luísa">Luísa</option>
+                            <option value="Hanna">Hanna</option>
+                            <option value="Taína">Taína</option>
+                            <option value="Maryane">Maryane</option>
+                            <option value="Vinícius">Vinícius</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Suporte *</label>
+                        <select id="new-Suporte" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="Hanna">Hanna</option>
+                            <option value="Taína">Taína</option>
+                            <option value="Maryane">Maryane</option>
+                            <option value="Vinícius">Vinícius</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                        <select id="new-status" class="form-select">
+                            <option value="0%">0%</option>
+                            <option value="25%">25%</option>
+                            <option value="50%">50%</option>
+                            <option value="75%">75%</option>
+                            <option value="100%">100%</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Data Início *</label>
+                        <input type="date" id="new-data-inicio" class="form-input">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Data Fim *</label>
+                        <input type="date" id="new-data-fim" class="form-input">
+                    </div>
+                </div>
+                
+                <button onclick="addTask()" class="btn-primary">
+                    <i class="fas fa-plus mr-2"></i>
+                    Adicionar Tarefa
+                </button>
+            </div>
+
+            <!-- Tasks List -->
+            <div class="card p-6">
+                <h3 class="text-lg font-semibold mb-4">Lista de Tarefas (<span id="task-count">0</span>)</h3>
+                <div id="tasks-container" class="space-y-4">
+                    <!-- Tasks will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Gantt Tab -->
+        <div id="content-gantt" class="hidden">
+            <div class="card p-6">
+                <h3 class="text-lg font-semibold mb-4 flex items-center">
+                    <i class="fas fa-calendar-alt mr-2 text-blue-600"></i>
+                    Gráfico de Gantt
+                </h3>
+                <p class="text-gray-600 mb-4">Visualização temporal das tarefas por Elaborador</p>
+                <div class="overflow-x-auto">
+                    <div id="gantt-container" class="min-w-[800px]">
+                        <!-- Gantt chart will be dynamically generated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reports Tab -->
+        <div id="content-reports" class="hidden space-y-6">
+            <!-- Summary Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="card p-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-tasks text-green-500 text-2xl"></i>
+                        <div>
+                            <p class="text-sm text-gray-600">Total de Tarefas</p>
+                            <p class="text-2xl font-bold" id="total-tasks">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-clock text-blue-500 text-2xl"></i>
+                        <div>
+                            <p class="text-sm text-gray-600">Em Andamento</p>
+                            <p class="text-2xl font-bold" id="in-progress-tasks">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-500 text-2xl"></i>
+                        <div>
+                            <p class="text-sm text-gray-600">Concluídas</p>
+                            <p class="text-2xl font-bold" id="completed-tasks">0</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card p-6">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-users text-purple-500 text-2xl"></i>
+                        <div>
+                            <p class="text-sm text-gray-600">Elaboradores Ativos</p>
+                            <p class="text-2xl font-bold" id="active-analysts">0</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card p-6">
+                    <h3 class="text-lg font-semibold mb-4">Tarefas por Elaborador</h3>
+                    <div class="chart-container">
+                        <canvas id="analyst-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <h3 class="text-lg font-semibold mb-4">Distribuição por Status</h3>
+                    <div class="chart-container">
+                        <canvas id="status-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <h3 class="text-lg font-semibold mb-4">Tarefas por Suporte</h3>
+                    <div class="chart-container">
+                        <canvas id="reviewer-chart"></canvas>
+                    </div>
+                </div>
+
+                <div class="card p-6">
+                    <h3 class="text-lg font-semibold mb-4">Atividades em Aberto</h3>
+                    <p class="text-gray-600 mb-4">Tarefas que precisam ser transferidas para o próximo mês</p>
+                    <div id="open-tasks-container" class="space-y-2">
+                        <!-- Open tasks will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Assets/js/app.js"></script>
+</body>
+</html>
+

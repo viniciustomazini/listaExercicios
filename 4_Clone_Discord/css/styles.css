@@ -1,0 +1,328 @@
+/*
+  Trilhas DIO.me - Clone Discord
+  Estilos CSS para a página inicial do Discord Clone
+  Baseado no design do Figma
+  Autor: Zini Solutions / Vinícius Tomazini
+  Data: 31/07/2025
+*/
+
+/* =====================================================
+   Reset e Declaração de Variáveis
+===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Cores */
+  --primary-color: #5865f2;       /* Discord Blue */
+  --secondary-color: #ffffff;     /* Branco */
+  --background-color: #f6f6f6;      /* Cinza Claro */
+  --text-color: #23272a;
+
+  /* Tipografia */
+  --font-family: 'Open Sans', sans-serif;
+
+  /* Espaçamentos */
+  --spacing-medium: 20px;
+  --spacing-large: 40px;
+
+  /* Bordas */
+  --border-radius: 8px;
+}
+
+/* =====================================================
+   Estilos Globais
+===================================================== */
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Containers Padronizados */
+.container,
+.container02 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* =====================================================
+   Seção Hero
+===================================================== */
+.hero {
+  background: url('../assets/img/image_header.png') no-repeat center/cover;
+  position: relative;
+  padding: var(--spacing-large) 0;
+  color: var(--secondary-color);
+}
+
+.hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: 'Luckiest Guy', cursive;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-top: var(--spacing-medium);
+  max-width: 757px;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   Botões
+===================================================== */
+.buttons {
+  margin-top: var(--spacing-medium);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-medium);
+}
+
+.button {
+  padding: 11px 23px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.button.primary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.button.primary:hover {
+  background-color: #f0f0f0;
+}
+
+.button.secondary {
+  background-color: var(--text-color);
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+}
+
+.button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* =====================================================
+   Seções Feature (01 e 03)
+===================================================== */
+.feature {
+  padding: var(--spacing-large) 0;
+  background-color: var(--secondary-color);
+  margin: 0 auto;
+
+}
+
+.feature .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 150px;
+}
+
+.feature-content {
+  max-width: 329px;
+  text-align: left;
+}
+
+.feature-content h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 800;
+  margin-bottom: var(--spacing-medium);
+}
+
+.feature-content p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-weight: 400;
+  width: 348px;
+  height: 88px;
+}
+
+.feature-image {
+  width: 40%;
+}
+
+.feature-image img {
+  width: 607px;
+  height: 394px;
+  display: block;
+}
+
+/* =====================================================
+   Seção Feature 02
+===================================================== */
+.feature02 {
+  padding: var(--spacing-large) 0;
+  background-color: var(--background-color);
+  margin: 0 auto;
+  display: flex;
+}
+
+.feature02 .container02 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.feature-content02 {
+  max-width: 329px;
+  text-align: left;
+}
+
+.feature-content02 h2 {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  font-weight: 800;
+  margin-bottom: var(--spacing-medium);
+}
+
+.feature-content02 p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  font-weight: 400;
+  width: 348px;
+  height: 88px;
+}
+
+.feature-image02 {
+  width: 40%;
+}
+
+.feature-image02 img {
+  width: 607px;
+  height: 394px;
+  display: block;
+}
+
+/* =====================================================
+   Seção Feature 04
+===================================================== */
+
+/* =====================================================
+   Seção Feature 04
+===================================================== */
+.feature04 {
+  padding: var(--spacing-large) 0;
+  background-color: var(--background-color);
+  margin: 0 auto;
+}
+
+/* Container principal da seção */
+.container04 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Texto no topo e imagem embaixo */
+  align-items: center;            /* Centraliza horizontalmente */
+  min-height: 600px;              /* Ajuste conforme necessário */
+  padding: 0 20px;
+}
+
+/* Estilização do bloco de texto */
+.feature-content04 {
+  text-align: center;
+}
+
+.feature-content04 h2 {
+  font-size: 40px;
+  font-weight: 400;
+  font-family: 'Luckiest Guy', cursive;
+  line-height: 1.2;
+  margin-top: var(--spacing-large);
+}
+
+.feature-content04 p {
+  font-size: 16px;
+  margin-top: var(--spacing-medium);
+  max-width: 802px;
+  line-height: 1.6;
+}
+
+/* Estilização da imagem */
+.feature-image04 {
+  text-align: center;
+}
+
+.feature-image04 img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* =====================================================
+   Seção Footer
+===================================================== */
+.footer {
+  background-color: #23272A;
+  color: var(--secondary-color);
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* =====================================================
+   Responsividade
+===================================================== */
+@media (max-width: 992px) {
+    .feature .container {
+        gap: 40px;      
+    }
+
+}
+@media (max-width: 768px) {
+  /* Ajusta o layout do Hero */
+  .hero .container {
+    flex-direction: column;
+  }
+  
+  .hero-content h1 {
+    font-size: 44px;
+  }
+  
+  /* Ajusta o layout das seções Feature e Feature 02 */
+  .feature .container,
+  .feature02 .container02 {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .feature-content,
+  .feature-content02 {
+    margin-bottom: var(--spacing-medium);
+  }
+  
+  .feature-image,
+  .feature-image02 {
+    width: 100%;
+    margin-bottom: var(--spacing-large);
+  }
+  
+    .feature .container {
+    gap: var(--spacing-medium);
+  }
+}
+

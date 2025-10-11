@@ -1,0 +1,253 @@
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f0f0f0; /* Cor de fundo geral */
+    color: #333; /* Cor do texto geral */
+}
+
+/* Estilos do Cabeçalho (Header) */
+.header {
+    background-color: #fff; /* Fundo branco */
+    padding: 10px;
+    display: flex;
+    align-items: center; /* Alinhamento vertical */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Estilos do Ícone do Menu Hamburguer */
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 16px 50px 0 24px; /* Espaçamento */
+    width: 24px;
+    height: 18px;
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+}
+
+.line {
+    width: 100%;
+    height: 2px;
+    background-color: #333; /* Cor das linhas */
+}
+
+.line:first-child {
+    margin-top: -1px; /* Ajuste fino para o primeiro tracinho */
+}
+
+.line:last-child {
+    margin-bottom: -1px; /* Ajuste fino para o último tracinho */
+}
+
+/* Estilos dos Ícones do Usuário */
+.user-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 24px; /* Espaçamento à direita */
+    gap: 10px; /* Espaçamento entre os ícones */
+}
+
+.camera-button,
+.notification-button,
+.profile-button {
+    padding: 10px;
+    border: 1px solid #ccc; /* Borda cinza clara */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+    background: none; /* Fundo transparente */
+    border-radius: 50%; /* Forma circular */
+}
+
+/* Estilos do Logo */
+
+.logo {
+    margin-left: 10px; /* Espaçamento à esquerda */
+}
+.logo img {
+    height: 20px;
+    width: 90px;
+    margin: 5px 0 0 5px; /* Espaçamento e alinhamento */
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 18px;
+        width: 80px; /* Ajuste de tamanho para telas menores */
+        margin: 3px 0 0 3px;
+    }
+
+    .menu-icon {
+        margin: 12px 0 0 12px; /* Ajuste de espaçamento para telas menores */
+    }
+}
+
+/* Estilos da Barra de Pesquisa */
+.search-bar {
+    display: flex;
+    flex-grow: 1; /* Ocupa o espaço restante */
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza a barra de pesquisa */
+}
+
+.search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 3px 0 0 3px; /* Bordas arredondadas à esquerda */
+    width: 300px; /* Largura */
+}
+
+.search-bar button {
+    padding: 8px 12px;
+    background-color: #f0f0f0; /* Fundo cinza claro */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 0 3px 3px 0; /* Bordas arredondadas à direita */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+}
+
+/* Estilos do Conteúdo Principal (Main Content) */
+.main-content {
+    display: flex;
+    padding: 20px;
+}
+
+/* Estilos da Seção do Vídeo */
+.video-section {
+    flex: 7; /* Ocupa 7/10 do espaço */
+    padding-right: 20px; /* Espaçamento à direita */
+}
+
+/* Estilos do Player do Vídeo */
+.video-player img {
+    width: 100%; /* Largura total */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+/* Estilos das Informações do Vídeo */
+.video-info {
+    background-color: #fff; /* Fundo branco */
+    padding: 15px;
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-top: 10px; /* Espaçamento acima */
+}
+
+/* Estilos das Informações do Canal */
+.channel-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaçamento abaixo */
+}
+
+.channel-info img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%; /* Forma circular */
+    margin-right: 10px; /* Espaçamento à direita */
+    object-fit: cover; /* Garante que a imagem preencha o espaço */
+}
+
+.channel-info button {
+    background-color: #c00; /* Vermelho */
+    color: #fff; /* Texto branco */
+    border: none; /* Sem borda */
+    padding: 8px 15px;
+    border-radius: 3px; /* Bordas arredondadas */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+}
+
+/* Estilos das Ações do Vídeo (Like, Dislike, Compartilhar, Download) */
+.video-actions {
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre os elementos */
+    align-items: center;
+    margin-bottom: 10px; /* Espaçamento abaixo */
+}
+
+.actions button {
+    background-color: transparent; /* Fundo transparente */
+    border: none; /* Sem borda */
+    margin-left: 10px; /* Espaçamento à esquerda */
+    cursor: pointer; /* Mãozinha ao passar o mouse */
+}
+
+/* Estilos da Descrição do Vídeo */
+.video-description {
+    line-height: 1.6; /* Espaçamento entre linhas */
+    font-size: 14px; /* Tamanho da fonte */
+    color: #555; /* Cor cinza */
+    width: 510px; /* Largura fixa */
+    height: 64px; /* Altura fixa */
+    justify-content: justify; /* Justifica o texto */
+}
+
+/* Estilos da Barra Lateral (Sidebar) */
+.sidebar {
+    flex: 3; /* Ocupa 3/10 do espaço */
+}
+
+/* Estilos da Sugestão de Vídeo */
+.video-suggestion {
+    display: flex;
+    margin-bottom: 15px; /* Espaçamento abaixo */
+    background-color: #fff; /* Fundo branco */
+    padding: 10px;
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+.video-suggestion img {
+    width: 120px;
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-right: 10px; /* Espaçamento à direita */
+}
+
+.suggestion-info p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.suggestion-info span {
+    color: #777; /* Cor cinza */
+}
+
+/* Estilos dos Botões de Like e Dislike */
+.dislike-button {
+    font-size: 14px;
+    color: #000; /* Cor preta */
+}
+
+.like-button {
+    font-size: 14px;
+    color: #000; /* Cor preta */
+}
+
+/* Estilos do Título do Vídeo */
+h2 {
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 20px;
+    font-style: semi-bold;
+    height: 23px;
+    margin: 0 0 20px 0; /* Espaçamento abaixo */
+}
+
+.channel-info p {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000; /* Cor preta */
+    margin-bottom: 10px; /* Espaçamento abaixo */
+    margin-right: 10px; /* Espaçamento à direita */
+}
+
+.channel-info button {
+    margin-top: 10px;
+    text-transform: uppercase;  /* Texto em maiúsculas */
+}
+
+.actions button {
+    margin-right: 10px; /* Espaçamento à direita */
+}
+
+.title {
+    font-weight: bold;
+    color: #000;
+}

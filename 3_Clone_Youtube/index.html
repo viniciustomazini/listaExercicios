@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone do YouTube</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="menu-icon">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="logo">
+            <img src="../Clone_Youtube/assets/img/youtube.png.png" alt="YouTube Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar">
+            <button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                </svg>
+            </button>
+        </div>
+        <div class="user-icons">
+            <button class="camera-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-camera-video" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1z"/>
+                </svg>
+            </button>
+            <button class="notification-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                </svg>
+            </button>
+            <button class="profile-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="video-section">
+            <div class="video-player">
+                <img src="../Clone_Youtube/assets/img/image.png" alt="Vídeo Principal">
+            </div>
+            <div class="video-info">
+                <h2>Semana Front-end | Dia 01: Construindo uma Landing Page no Mundo Invertido com HTML e CSS</h2>
+                <div class="channel-info">
+                    <img
+                        src="../Clone_Youtube/assets/img/dio_profile.jpg"
+                        alt="Foto de perfil do canal DIO"
+                        width="40"
+                        height="40"
+                        loading="lazy"
+                    >
+                    <p>DIO<br><span>83,3 mil inscritos</span></p>
+                    <button>Inscreva-se</button>
+                </div>
+                <div class="video-actions">
+                    <span>28.418 visualizações<br>Transmitido ao vivo em 23 de ago. de 2022</span>
+                    <div class="actions">
+                        <button class="like-button">
+                            <i class="bi bi-hand-thumbs-up"></i> 2 mil
+                        </button>
+                        <button class="dislike-button">
+                            <i class="bi bi-hand-thumbs-down"></i> Não gostei
+                        </button>
+                        <button>
+                           <i class="bi bi-share"></i> Compartilhar
+                        </button>
+                        <button>
+                            <i class="bi bi-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+                <p class="video-description">Inicie uma aventura imersiva no mundo do Front-end com HTML e CSS. Para isso, criaremos uma landing page com a temática da série Stranger Things, a qual contará com a implementação de um theme switcher (light e dark) para explorarmos os mistérios do mundo invertido.</p>
+            </div>
+        </div>
+
+        <aside class="sidebar">
+            <div class="video-suggestion">
+                <img src="../Clone_Youtube/assets/img/geração Tech Unimed.png" alt="Vídeo Sugerido">
+                <div class="suggestion-info">
+                    <p class="title">Geração Tech Unimed - BH - Ciência de Dados</p>
+                    <p>DigitalInnovationOne<br><span>2,1 mil visualizações</span><span><br>Transmitido há 2 dias</span></p>
+                </div>
+            </div>
+            <div class="video-suggestion">
+                <img src="../Clone_Youtube/assets/img/Scrum Talks.png" alt="Vídeo Sugerido">
+                <div class="suggestion-info">
+                    <p class="title">Scrum Talks</p>
+                    <p>DigitalInnovationOne<br><span>1,6 mil visualizações</span><span><br>Transmitido há 3 dias</span></p>
+                </div>
+            </div>
+            <div class="video-suggestion">
+                <img src="../Clone_Youtube/assets/img/machine learning.png" alt="Vídeo Sugerido">
+                <div class="suggestion-info">
+                    <p class="title">Machine Learning Avançado - Fast Track</p>
+                    <p>DigitalInnovationOne<br><span>1,7 mil visualizações</span><span><br>Transmitido há 4 dias</span></p>
+                </div>
+            </div>
+            <div class="video-suggestion">
+                <img src="../Clone_Youtube/assets/img/global skills.png" alt="Vídeo Sugerido">
+                <div class="suggestion-info">
+                    <p class="title">Global Skills #2 - Project Planning</p>
+                    <p>DigitalInnovationOne<br><span>971 visualizações</span><span><br>Transmitido há 5 dias</span></p>
+                </div>
+            </div>
+            <div class="video-suggestion">
+                <img src="../Clone_Youtube/assets/img/Como aprender python.png" alt="Vídeo Sugerido">
+                <div class="suggestion-info">
+                    <p class="title">Como aprender a programar Python do ZERO</p>
+                    <p>DigitalInnovationOne<br><span>711 visualizações</span><span><br>Transmitido há 6 dias</span></p>
+                </div>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

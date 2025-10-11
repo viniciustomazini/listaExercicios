@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bing Automator Brasil</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🇧🇷 Bing Automator Brasil</h1>
+            <p class="subtitle">Pesquisas automatizadas sobre o Brasil</p>
+        </header>
+
+        <main>
+            <div class="status-section">
+                <div class="status-indicator">
+                    <span id="status-dot" class="status-dot stopped"></span>
+                    <span id="status-text">Parado</span>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-label">Pesquisas:</span>
+                        <span id="search-count">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Última:</span>
+                        <span id="last-search">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <button id="start-btn" class="btn btn-primary">
+                    <span class="btn-icon">▶️</span>
+                    Iniciar Automação
+                </button>
+                <button id="stop-btn" class="btn btn-secondary" disabled>
+                    <span class="btn-icon">⏹️</span>
+                    Parar Automação
+                </button>
+            </div>
+
+            <div class="settings-section">
+                <h3>⚙️ Configurações</h3>
+                
+                <div class="setting-group">
+                    <label for="interval-select">Intervalo entre pesquisas:</label>
+                    <select id="interval-select">
+                        <option value="5">5 segundos</option>
+                        <option value="10" selected>10 segundos</option>
+                        <option value="15">15 segundos</option>
+                        <option value="30">30 segundos</option>
+                        <option value="60">1 minuto</option>
+                        <option value="120">2 minutos</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="device-select">Tipo de dispositivo:</label>
+                    <select id="device-select">
+                        <option value="desktop" selected>Desktop</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="both">Ambos (alternado)</option>
+                    </select>
+                </div>
+
+                <div class="setting-group">
+                    <label for="max-searches">Máximo de pesquisas por sessão:</label>
+                    <input type="number" id="max-searches" min="1" max="100" value="30">
+                </div>
+
+                <div class="setting-group checkbox-group">
+                    <input type="checkbox" id="random-order" checked>
+                    <label for="random-order">Ordem aleatória dos termos</label>
+                </div>
+            </div>
+
+            <div class="categories-section">
+                <h3>📂 Categorias de Pesquisa</h3>
+                <div class="categories-grid">
+                    <label class="category-item">
+                        <input type="checkbox" value="esportes" checked>
+                        <span>🏆 Esportes</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="celebridades" checked>
+                        <span>⭐ Celebridades</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="turismo" checked>
+                        <span>🏖️ Turismo</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="carros" checked>
+                        <span>🚗 Carros</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="politica" checked>
+                        <span>🏛️ Política</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="religiao" checked>
+                        <span>⛪ Religião</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="ciencia" checked>
+                        <span>🧪 Ciência</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="petroleo" checked>
+                        <span>🛢️ Petróleo</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="investimentos" checked>
+                        <span>💰 Investimentos</span>
+                    </label>
+                    <label class="category-item">
+                        <input type="checkbox" value="cultura" checked>
+                        <span>🎭 Cultura</span>
+                    </label>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-info">
+                <small>Versão 1.0.0 | Desenvolvido por Zini Solutions</small>
+            </div>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+
