@@ -1,291 +1,167 @@
-        .header {
-            padding: 40px 20px 20px;
-            background: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+/* Cabeçalho */
+.header h1 {
+    font-size: 2rem;
+    color: #303943;
+    margin: 20px 0;
+}
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            color: #303943;
-        }
+/* Lista de Pokémon */
+.pokemons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    list-style: none;
+}
 
-        .pokemon-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding: 0 20px 20px;
-            list-style: none;
-        }
+/* Card Individual */
+.pokemon {
+    border-radius: 1rem;
+    padding: 1rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 120px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
 
-        /* Card Styles */
-        .pokemon-card {
-            border-radius: 15px;
-            padding: 15px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            height: 120px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
+.pokemon:hover {
+    transform: scale(1.02);
+}
 
-        .pokemon-card:hover {
-            transform: scale(1.03);
-        }
+.pokemon .number {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    opacity: 0.2;
+}
 
-        .pokemon-card .name {
-            text-transform: capitalize;
-            font-weight: 700;
-            font-size: 16px;
-            margin-bottom: 8px;
-            z-index: 2;
-        }
+.pokemon .name {
+    text-transform: capitalize;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
 
-        .pokemon-card .types {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            z-index: 2;
-        }
+.pokemon .detail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 
-        .pokemon-card .type {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-size: 10px;
-            width: fit-content;
-            text-align: center;
-        }
+.pokemon .types {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
 
-        .pokemon-card .number {
-            position: absolute;
-            right: 10px;
-            top: 10px;
-            font-size: 14px;
-            font-weight: 700;
-            opacity: 0.15;
-        }
+.pokemon .type {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    font-size: 0.65rem;
+    padding: 4px 10px;
+    text-align: center;
+}
 
-        .pokemon-card .image {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 70px;
-            height: 70px;
-            z-index: 2;
-        }
+.pokemon img {
+    max-width: 70px;
+    height: 70px;
+}
 
-        .pokemon-card::after {
-            content: '';
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 50%;
-            bottom: -15px;
-            right: -15px;
-            z-index: 1;
-        }
+/* Cores por Tipo */
+.grass { background-color: #48d0b0; }
+.fire { background-color: #fb6c6c; }
+.water { background-color: #76bdfe; }
+.bug { background-color: #aabb22; }
+.normal { background-color: #a8a878; }
+.poison { background-color: #a040a0; }
+.electric { background-color: #ffd86e; color: #303943; }
+.ground { background-color: #e2bf65; }
+.fairy { background-color: #ee99ac; }
 
-        /* Type Backgrounds */
-        .bg-grass { background-color: #48d0b0; }
-        .bg-fire { background-color: #fb6c6c; }
-        .bg-water { background-color: #76bdfe; }
-        .bg-bug { background-color: #aabb22; }
-        .bg-normal { background-color: #a8a878; }
-        .bg-poison { background-color: #a040a0; }
-        .bg-electric { background-color: #ffd86e; color: #303943; }
-        .bg-ground { background-color: #e2bf65; }
-        .bg-fairy { background-color: #ee99ac; }
-        .bg-fighting { background-color: #c03028; }
-        .bg-psychic { background-color: #f85888; }
-        .bg-rock { background-color: #b8a038; }
-        .bg-ghost { background-color: #705898; }
-        .bg-ice { background-color: #98d8d8; }
-        .bg-dragon { background-color: #7038f8; }
-        .bg-dark { background-color: #705848; }
-        .bg-steel { background-color: #b8b8d0; }
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
 
-        .bg-electric .type { background: rgba(0,0,0,0.05); }
+#loadMoreButton {
+    background-color: #6c79db;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+}
 
-        /* Pagination Button */
-        .pagination {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
+/* Modal Detalhes (Layout da imagem) */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: flex-end;
+}
 
-        #loadMore {
-            background-color: #6c79db;
-            color: white;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 700;
-            transition: background 0.2s;
-        }
+.modal-content {
+    width: 100%;
+    max-width: 480px;
+    height: 90vh;
+    border-radius: 2rem 2rem 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
-        #loadMore:hover {
-            background-color: #5a67c5;
-        }
+.modal-header {
+    padding: 40px 20px 80px;
+    color: #fff;
+}
 
-        /* Modal / Detail View */
-        #detail-modal {
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 450px;
-            height: 100%;
-            z-index: 100;
-            display: none;
-            flex-direction: column;
-            animation: slideUp 0.3s ease-out;
-        }
+.modal-body {
+    background: #fff;
+    flex: 1;
+    border-radius: 2rem 2rem 0 0;
+    margin-top: -30px;
+    padding: 40px 20px;
+}
 
-        @keyframes slideUp {
-            from { transform: translate(-50%, 100%); }
-            to { transform: translate(-50%, 0); }
-        }
+.modal-img-container {
+    position: absolute;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
 
-        .detail-header {
-            padding: 40px 20px 100px;
-            color: white;
-            position: relative;
-        }
+.modal-img-container img {
+    width: 200px;
+}
 
-        .detail-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+/* Stats (Barras) */
+.stat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
 
-        .back-btn {
-            background: none;
-            color: white;
-            font-size: 24px;
-        }
-
-        .detail-info {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .detail-info h2 {
-            font-size: 36px;
-            text-transform: capitalize;
-        }
-
-        .detail-info .num {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .detail-types {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .detail-img-container {
-            position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 102;
-        }
-
-        .detail-img-container img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .detail-body {
-            background: white;
-            flex-grow: 1;
-            border-top-left-radius: 30px;
-            border-top-right-radius: 30px;
-            padding: 80px 30px 30px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .detail-tabs {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .tab {
-            padding-bottom: 15px;
-            font-size: 14px;
-            color: #999;
-            font-weight: 700;
-            cursor: pointer;
-        }
-
-        .tab.active {
-            color: #303943;
-            border-bottom: 2px solid #6c79db;
-        }
-
-        .stats-list {
-            list-style: none;
-        }
-
-        .stat-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .stat-label {
-            width: 100px;
-            color: #999;
-            font-size: 14px;
-        }
-
-        .stat-value {
-            width: 40px;
-            font-weight: 700;
-            color: #303943;
-            font-size: 14px;
-        }
-
-        .stat-bar-container {
-            flex-grow: 1;
-            height: 4px;
-            background: #eee;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .stat-bar {
-            height: 100%;
-            background: #48d0b0;
-            width: 0%;
-            transition: width 1s ease-in-out;
-        }
-
-        /* SVG Icons Simulation */
-        .icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
-        }
+.stat-label { width: 100px; color: #999; }
+.stat-value { width: 40px; font-weight: 700; color: #303943; }
+.stat-bar-bg { flex: 1; height: 4px; background: #eee; border-radius: 2px; }
+.stat-bar-fill { height: 100%; border-radius: 2px; transition: width 0.5s; }
