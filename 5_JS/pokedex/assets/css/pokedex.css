@@ -143,14 +143,16 @@
 
 .modal-img-container {
     position: absolute;
-    top: 150px;
+    top: 160px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
+    z-index: 101;
 }
 
 .modal-img-container img {
     width: 200px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba 0,0,0,0.2);
 }
 
 /* Stats (Barras) */
