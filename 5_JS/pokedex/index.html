@@ -4,12 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex Project</title>
-    <link href="https://unpkg.com/@csstools/normalize.css@12.1.1/normalize.css" rel="stylesheet" />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    <!-- Custom Global CSS -->
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <!-- Pokedex Specific CSS -->
+    <link rel="stylesheet" href="./assets/css/pokedex.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <h1>Pokedex Project</h1>
+    <div id="app-container">
+        <!-- Main Pokédex List -->
+        <header class="header" id="main-header">
+            <div class="header-top">
+                <button id="back-pokedex" style="background:none;"><svg class="icon" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg></button>
+                <button style="background:none;"><svg class="icon" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg></button>
+            </div>
+            <h1>Pokedex</h1>
+        </header>
+
+        <ul id="pokemonList" class="pokemon-list">
+            <!-- Pokemon cards will be injected here -->
+        </ul>
+
+        <div class="pagination">
+            <button id="loadMore" type="button">Carregar mais</button>
+        </div>
+
+        <!-- Detail View (Modal) -->
+        <div id="detail-modal">
+            <div class="detail-header" id="modal-head">
+                <div class="detail-nav">
+                    <button class="back-btn" onclick="closeDetail()"><svg class="icon" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg></button>
+                    <button class="back-btn"><svg class="icon" viewBox="0 0 24 24"><path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.41,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.59,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" /></svg></button>
+                </div>
+                <div class="detail-info">
+                    <div>
+                        <h2 id="modal-name">Bulbasaur</h2>
+                        <div class="detail-types" id="modal-types">
+                            <!-- Types injected -->
+                        </div>
+                    </div>
+                    <span class="num" id="modal-id">#001</span>
+                </div>
+                <div class="detail-img-container">
+                    <img id="modal-img" src="" alt="">
+                </div>
+            </div>
+            <div class="detail-body">
+                <div class="detail-tabs">
+                    <span class="tab">Sobre</span>
+                    <span class="tab active">Status Base</span>
+                    <span class="tab">Evolução</span>
+                    <span class="tab">Movimentos</span>
+                </div>
+                <ul class="stats-list" id="modal-stats">
+                    <!-- Stats injected -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Pokedex Container -->
+    <script src="./assets/js/main.js"></script>
+    <!-- PokeAPI Interaction Script -->
+    <script src="./assets/js/poke-api.js"></script>
+    <!-- Pokemon Model Script -->
+    <script src="./assets/js/pokemon-model.js"></script>
 </body>
 
 </html>
